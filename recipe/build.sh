@@ -16,6 +16,7 @@ mkdir ../build
 cd ../build
 cmake $src_dir \
          -DCMAKE_INSTALL_PREFIX=$PREFIX \
+         -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
          -DENABLE_JPG=1 \
          -DENABLE_NETCDF=1 \
          -DENABLE_PNG=1 \
