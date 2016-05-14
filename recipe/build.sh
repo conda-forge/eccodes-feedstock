@@ -2,7 +2,7 @@
 
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
-  ctestarg="-E gts_ls"
+  # ctestarg="-E gts_ls"
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
@@ -22,8 +22,11 @@ cmake $src_dir \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=0
 
+if [[ $(uname) == Darwin ]]; then
+  export MACOSX_DEPLOYMENT_TARGET=10.10
+fi
 make
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-ctest $ctestarg
+ctest #$ctestarg
 make install
