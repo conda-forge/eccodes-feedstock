@@ -3,6 +3,16 @@
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   # ctestarg="-E gts_ls"
+  # for Mac OSX
+  export CC=clang
+  export CXX=clang++
+  export MACOSX_VERSION_MIN="10.7"
+  export MACOSX_DEPLOYMENT_TARGET="${MACOSX_VERSION_MIN}"
+  export CXXFLAGS="${CXXFLAGS} -mmacosx-version-min=${MACOSX_VERSION_MIN}"
+  export CXXFLAGS="${CXXFLAGS} -stdlib=libc++"
+  export LDFLAGS="${LDFLAGS} -mmacosx-version-min=${MACOSX_VERSION_MIN}"
+  export LDFLAGS="${LDFLAGS} -stdlib=libc++ -lc++"
+  export LINKFLAGS="${LDFLAGS}"
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
