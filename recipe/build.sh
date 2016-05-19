@@ -13,7 +13,7 @@ if [[ $(uname) == Darwin ]]; then
   export LDFLAGS="${LDFLAGS} -mmacosx-version-min=${MACOSX_VERSION_MIN}"
   export LDFLAGS="${LDFLAGS} -stdlib=libc++ -lc++"
   export LINKFLAGS="${LDFLAGS}"
-  export MACOSX_DEPLOYMENT_TARGET=10.10
+  export MACOSX_DEPLOYMENT_TARGET=10.7
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
@@ -27,7 +27,7 @@ mkdir ../build
 cd ../build
 cmake $src_dir \
          -DCMAKE_INSTALL_PREFIX=$PREFIX \
-         -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
+         -DCMAKE_OSX_DEPLOYMENT_TARGET=10.7 \
          -DENABLE_JPG=1 \
          -DENABLE_NETCDF=1 \
          -DENABLE_PNG=1 \
