@@ -10,20 +10,20 @@ source:
   md5: 46a0a520f647cfa2fb5f287f22269603
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
     - cmake
-    - boost
+    - boost 1.60.*
     - jasper
     - libpng 1.6*
     - libnetcdf 4.3*
     
   run:
-    - boost
+    - boost 1.60.*
     - jasper
     - libpng 1.6*
     - libnetcdf 4.3*
