@@ -17,16 +17,16 @@ build:
 requirements:
   build:
     - cmake
-    - boost 1.60.*
+    - boost 1.61.*
     - jasper
-    - libpng 1.6*
-    - libnetcdf 4.4*
+    - libpng >=1.6.21,<1.7
+    - libnetcdf 4.4.*
 
   run:
-    - boost 1.60.*
+    - boost 1.61.*
     - jasper
-    - libpng 1.6*
-    - libnetcdf 4.4*
+    - libpng >=1.6.21,<1.7
+    - libnetcdf 4.4.*
 
 test:
   commands:
