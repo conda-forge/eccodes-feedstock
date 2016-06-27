@@ -21,13 +21,12 @@ requirements:
     - jasper
     - libpng >=1.6.21,<1.7
     - libnetcdf 4.4.*
-    - perl >=5.20
+    - perl
   run:
     - boost 1.61.*
     - jasper
     - libpng >=1.6.21,<1.7
     - libnetcdf 4.4.*
-    - perl >=5.20
 
 test:
   commands:
