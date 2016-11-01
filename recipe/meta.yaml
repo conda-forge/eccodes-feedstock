@@ -10,7 +10,7 @@ source:
   md5: 46a0a520f647cfa2fb5f287f22269603
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
@@ -19,13 +19,13 @@ requirements:
     - cmake
     - boost 1.61.*
     - jasper
-    - libpng >=1.6.21,<1.7
+    - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
     - perl
   run:
     - boost 1.61.*
     - jasper
-    - libpng >=1.6.21,<1.7
+    - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
 
 test:
