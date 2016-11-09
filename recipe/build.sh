@@ -2,7 +2,7 @@
 
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
-  ctestarg="-E gts_ls"
+  ctestarg="-E gts"
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
