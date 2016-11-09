@@ -1,4 +1,4 @@
-{% set version = "0.13.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: eccodes
@@ -7,10 +7,10 @@ package:
 source:
   url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
   fn: eccodes-{{ version }}-Source.tar.gz
-  md5: 46a0a520f647cfa2fb5f287f22269603
+  sha256: 338b311df338950ace79a8d26ffae17f3425bdc56cb8b36b620a69f5841b64f0
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
@@ -19,13 +19,13 @@ requirements:
     - cmake
     - boost 1.61.*
     - jasper
-    - libpng >=1.6.21,<1.7
+    - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
     - perl
   run:
     - boost 1.61.*
     - jasper
-    - libpng >=1.6.21,<1.7
+    - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
 
 test:
