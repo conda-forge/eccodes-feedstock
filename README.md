@@ -3,13 +3,25 @@ About eccodes
 
 Home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
 
-Package license: Apache License Version 2.0, January 2004
+Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
 Summary: ECMWF ecCodes Copyright 2005-2016 ECMWF.
 
 
+
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/eccodes-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/eccodes-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/eccodes-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/eccodes-feedstock)
+Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/version.svg)](https://anaconda.org/conda-forge/eccodes)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/downloads.svg)](https://anaconda.org/conda-forge/eccodes)
 
 Installing eccodes
 ==================
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `eccodes` available on your platfo
 ```
 conda search eccodes --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/eccodes-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/eccodes-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/eccodes-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/eccodes-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/version.svg)](https://anaconda.org/conda-forge/eccodes)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/downloads.svg)](https://anaconda.org/conda-forge/eccodes)
 
 
 Updating eccodes-feedstock
