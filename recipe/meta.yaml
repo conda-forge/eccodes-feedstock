@@ -17,13 +17,13 @@ build:
 requirements:
   build:
     - cmake
-    - boost 1.61.*
+    - boost 1.62.*
     - jasper
     - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
     - perl
   run:
-    - boost 1.61.*
+    - boost 1.62.*
     - jasper
     - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
