@@ -11,16 +11,14 @@ export PYTHON=
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
-src_dir="$(pwd)"
-mkdir ../build
-cd ../build
-cmake $src_dir \
-         -DCMAKE_INSTALL_PREFIX=$PREFIX \
-         -DENABLE_JPG=1 \
-         -DENABLE_NETCDF=1 \
-         -DENABLE_PNG=1 \
-         -DENABLE_PYTHON=0 \
-         -DENABLE_FORTRAN=0
+mkdir build_eccodes && cd build_eccodes
+cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
+      -D ENABLE_JPG=1 \
+      -D ENABLE_NETCDF=1 \
+      -D ENABLE_PNG=1 \
+      -D ENABLE_PYTHON=0 \
+      -D ENABLE_FORTRAN=1 \
+      $SRC_DIR
 
 make
 export ECCODES_TEST_VERBOSE_OUTPUT=1
