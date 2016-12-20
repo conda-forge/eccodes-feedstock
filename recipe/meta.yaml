@@ -18,12 +18,14 @@ requirements:
   build:
     - cmake
     - boost 1.62.*
-    - jasper
+    - jasper  # [not win]
+    - openjpeg
     - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
     - perl
   run:
-    - jasper
+    - jasper  # [not win]
+    - openjpeg
     - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
 
