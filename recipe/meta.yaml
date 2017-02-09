@@ -21,7 +21,7 @@ requirements:
     - jasper
     - libpng >=1.6.23,<1.7
     - libnetcdf 4.4.*
-    - perl
+    - perl 5.22.2.1
   run:
     - jasper
     - libpng >=1.6.23,<1.7
