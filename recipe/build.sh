@@ -2,10 +2,8 @@
 
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
-  NPROC=$(sysctl -n hw.ncpu)
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
-  NPROC=$(nproc)
 fi
 
 export PYTHON=
@@ -24,8 +22,8 @@ cmake $src_dir \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=0
 
-make -j $NPROC
+make -j $CPU_COUNT
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-ctest -j $NPROC
+ctest -j $CPU_COUNT
 make install
