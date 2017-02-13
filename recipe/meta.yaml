@@ -31,8 +31,6 @@ requirements:
 test:
   commands:
     - codes_info
-    - ls $(codes_info -s)
-    - ls $(codes_info -d)
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
