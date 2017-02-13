@@ -26,4 +26,5 @@ make -j $CPU_COUNT
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 ctest -j $CPU_COUNT
-make install
+# Redirect to keep the CI logs manageable
+make install > install.log
