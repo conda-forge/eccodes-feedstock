@@ -2,6 +2,7 @@
 
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
+  ctestarg="-E gts"
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
@@ -25,6 +26,6 @@ cmake $src_dir \
 make -j $CPU_COUNT
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-ctest -j $CPU_COUNT
+ctest -j $CPU_COUNT $ctestarg
 # Redirect to keep the CI logs manageable
 make install > install.log
