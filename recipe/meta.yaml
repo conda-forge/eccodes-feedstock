@@ -10,7 +10,7 @@ source:
   sha256: e7382b06d99e9f6558751c888403181cbbac95ea51275c7ff8d41c15c2ccf554
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
@@ -22,6 +22,7 @@ requirements:
     - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
     - perl 5.22.2.1
+    - python 2.7.*
   run:
     - jasper
     - libpng >=1.6.28,<1.7
@@ -30,8 +31,6 @@ requirements:
 test:
   commands:
     - codes_info
-    - ls $(codes_info -s)
-    - ls $(codes_info -d)
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
