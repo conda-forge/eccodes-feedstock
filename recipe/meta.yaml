@@ -11,27 +11,40 @@ source:
 
 build:
   number: 1
-  skip: true  # [win]
   detect_binary_files_with_prefix: true
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
     - cmake
+    - msinttypes  # [win and py<35]
     - boost 1.63.*
-    - jasper
+    - jasper  # [not win]
+    - openjpeg
     - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
     - perl 5.22.2.1
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
   run:
-    - jasper
+    - jasper  # [not win]
+    - openjpeg
     - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
+
 
 test:
   commands:
     - codes_info
-    - ls $(codes_info -s)
-    - ls $(codes_info -d)
+    - ls $(codes_info -s)  # [not win]
+    - ls $(codes_info -d)  # [not win]
     - conda inspect linkages -p $PREFIX eccodes  # [not win]
     - conda inspect objects -p $PREFIX eccodes  # [osx]
 
