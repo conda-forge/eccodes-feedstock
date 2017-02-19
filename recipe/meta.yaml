@@ -32,6 +32,8 @@ test:
     - codes_info
     - ls $(codes_info -s)
     - ls $(codes_info -d)
+    - conda inspect linkages -p $PREFIX eccodes  # [not win]
+    - conda inspect objects -p $PREFIX eccodes  # [osx]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
