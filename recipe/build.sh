@@ -48,10 +48,10 @@ cmake $src_dir \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=0
 
-make >> $BUILD_OUTPUT 2>&1
+make -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-ctest >> $BUILD_OUTPUT 2>&1
+ctest -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
 make install >> $BUILD_OUTPUT 2>&1
 
 # The build finished without returning an error so dump a tail of the output.
