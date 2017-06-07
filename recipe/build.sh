@@ -51,7 +51,9 @@ cmake $src_dir \
 make -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
+if [[ $(uname) == Linux ]]; then
 ctest -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
+fi
 make install >> $BUILD_OUTPUT 2>&1
 
 # The build finished without returning an error so dump a tail of the output.
