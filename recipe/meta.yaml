@@ -18,12 +18,12 @@ requirements:
     - cmake
     - boost 1.65.1
     - jasper
-    - libpng >=1.6.28,<1.7
+    - libpng >=1.6.22,<1.6.31
     - libnetcdf 4.4.*
     - perl 5.22.2.1
   run:
     - jasper
-    - libpng >=1.6.28,<1.7
+    - libpng >=1.6.22,<1.6.31
     - libnetcdf 4.4.*
 
 test:
@@ -31,8 +31,8 @@ test:
     - codes_info
     - ls $(codes_info -s)
     - ls $(codes_info -d)
-    - conda inspect linkages -p $PREFIX eccodes  # [not win]
-    - conda inspect objects -p $PREFIX eccodes  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
