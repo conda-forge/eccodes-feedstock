@@ -9,7 +9,7 @@ source:
   sha256: 18ab44bc444168fd324d07f7dea94f89e056f5c5cd973e818c8783f952702e4e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
@@ -18,13 +18,15 @@ requirements:
     - cmake
     - boost 1.65.1
     - jasper
-    - libpng >=1.6.22,<1.6.31
+    - libpng >=1.6.32,<1.6.35
     - libnetcdf 4.4.*
+    - hdf5 1.10.1
     - perl 5.22.2.1
   run:
     - jasper
-    - libpng >=1.6.22,<1.6.31
+    - libpng >=1.6.32,<1.6.35
     - libnetcdf 4.4.*
+    - hdf5 1.10.1
 
 test:
   commands:
