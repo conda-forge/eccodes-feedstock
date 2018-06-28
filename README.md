@@ -7,21 +7,23 @@ Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: ECMWF ecCodes Copyright 2005-2017 ECMWF.
+Summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
 
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/eccodes-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/eccodes-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/eccodes-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/eccodes-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/eccodes-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/eccodes-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/eccodes-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/eccodes-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/version.svg)](https://anaconda.org/conda-forge/eccodes)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eccodes/badges/downloads.svg)](https://anaconda.org/conda-forge/eccodes)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-eccodes-green.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) |
 
 Installing eccodes
 ==================
