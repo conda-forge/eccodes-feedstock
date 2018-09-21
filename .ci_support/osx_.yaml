@@ -1,7 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
-boost:
-- 1.67.0
 c_compiler:
 - toolchain_c
 channel_sources:
@@ -25,8 +23,6 @@ macos_machine:
 macos_min_version:
 - '10.9'
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
   hdf5:
     max_pin: x.x.x
   jasper:

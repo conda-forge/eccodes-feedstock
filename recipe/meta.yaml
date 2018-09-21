@@ -21,7 +21,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - boost
     - jasper
     - libpng
     - libnetcdf
