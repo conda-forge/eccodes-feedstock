@@ -25,11 +25,13 @@ requirements:
     - libpng
     - libnetcdf
     - hdf5
+    - zlib
   run:
     - jasper
     - libpng
     - libnetcdf
     - hdf5
+    - zlib
 
 test:
   commands:
