@@ -17,7 +17,7 @@ jasper:
 libnetcdf:
 - '4.6'
 libpng:
-- 1.6.34
+- 1.6.35
 pin_run_as_build:
   hdf5:
     max_pin: x.x.x
