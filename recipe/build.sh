@@ -48,7 +48,7 @@ cmake $src_dir \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=1
 
-make -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
+make -j $CPU_COUNT VERBOSE=1 >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 if [[ $(uname) == Linux ]]; then
