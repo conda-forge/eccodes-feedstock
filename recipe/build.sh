@@ -7,6 +7,10 @@ export PING_SLEEP=30s
 export WORKDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export BUILD_OUTPUT=$WORKDIR/build.out
 
+if [[ "$c_compiler" == "gcc" ]]; then
+  export LDFLAGS="${LDFLAGS} -L${BUILD_PREFIX}/${HOST}/sysroot/lib"
+fi
+
 touch $BUILD_OUTPUT
 
 dump_output() {
