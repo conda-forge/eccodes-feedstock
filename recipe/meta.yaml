@@ -9,18 +9,18 @@ source:
   sha256: 08f476c94605fb03a405fa83ea8fbd7078b1480e5836a0c8602bce753efcf2a1
 
 build:
-  number: 0
+  number: 1000
   skip: true  # [win]
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
     - cmake
-    - perl 5.22.2.1
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - perl
     - jasper
     - libpng
     - libnetcdf
@@ -36,8 +36,6 @@ test:
     - codes_info
     - ls $(codes_info -s)
     - ls $(codes_info -d)
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
