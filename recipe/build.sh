@@ -8,6 +8,7 @@ export WORKDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export BUILD_OUTPUT=$WORKDIR/build.out
 
 if [[ "$c_compiler" == "gcc" ]]; then
+  ln -s ${BUILD_PREFIX}/${HOST}/sysroot/lib/libm.so.6 ${BUILD_PREFIX}/${HOST}/sysroot/libm.so
   export PATH="${PATH}:${BUILD_PREFIX}/${HOST}/sysroot/lib"
 fi
 
