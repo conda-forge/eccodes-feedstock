@@ -24,11 +24,13 @@ requirements:
     - jasper
     - libpng
     - libnetcdf
+    - libaec
     - hdf5
   run:
     - jasper
     - libpng
     - libnetcdf
+    - libaec
     - hdf5
 
 test:
