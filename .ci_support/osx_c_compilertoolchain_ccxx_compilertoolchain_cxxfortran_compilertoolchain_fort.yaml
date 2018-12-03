@@ -13,7 +13,7 @@ cxx_compiler:
 fortran_compiler:
 - toolchain_fort
 hdf5:
-- 1.10.3
+- 1.10.4
 jasper:
 - 1.900.1
 libnetcdf:
@@ -27,8 +27,6 @@ macos_min_version:
 perl:
 - '5.26'
 pin_run_as_build:
-  hdf5:
-    max_pin: x.x.x
   jasper:
     max_pin: x
   libnetcdf:
