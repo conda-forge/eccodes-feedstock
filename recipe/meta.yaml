@@ -10,34 +10,44 @@ source:
 
 build:
   number: 1000
-  skip: true  # [win]
+  skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
+  features:
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
     - cmake
-    - {{ compiler('fortran') }}
+    - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - m2-bash  # [win]
+    - m2-findutils  # [win]
+    - m2-coreutils  # [win]
+    - m2-grep  # [win]
+    - m2-sed  # [win]
+    - m2-gawk  # [win]
+    - m2-diffutils  # [win]
   host:
-    - perl
-    - jasper
-    - libpng
+    - perl  # [not win]
+    - m2-perl  # [win]
+    - jasper  # [not win]
+    - libpng  # [not win]
     - libnetcdf
-    - libaec
+    - libaec  # [not win]
     - hdf5
   run:
-    - jasper
-    - libpng
+    - jasper  # [not win]
+    - libpng  # [not win]
     - libnetcdf
-    - libaec
+    - libaec  # [not win]
     - hdf5
 
 test:
   commands:
     - codes_info
-    - ls $(codes_info -s)
-    - ls $(codes_info -d)
+    - ls $(codes_info -s)  # [not win]
+    - ls $(codes_info -d)  # [not win]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
