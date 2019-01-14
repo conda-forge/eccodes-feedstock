@@ -1,3 +1,10 @@
+:: On windows we get the src from git
+:: This is a hack and should be removed once the Windows porting work is in the tarball
+find . ! -name 'bld.bat' -exec rm -r {} +
+git clone --config core.symlinks=true --depth 1 https://github.com/ecmwf/eccodes.git
+git clone --depth 1 https://github.com/ecmwf/ecbuild.git
+cd eccodes
+
 mkdir build
 cd build
 
