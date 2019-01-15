@@ -15,7 +15,7 @@ touch $BUILD_OUTPUT
 
 dump_output() {
    echo Tailing the last 500 lines of output:
-   tail -5000 $BUILD_OUTPUT
+   tail -500 $BUILD_OUTPUT
 }
 error_handler() {
   echo ERROR: An error was encountered with the build.
@@ -54,7 +54,7 @@ cmake $src_dir \
          -DENABLE_FORTRAN=1 \
          -DENABLE_AEC=1
 
-make VERBOSE=1 >> $BUILD_OUTPUT 2>&1
+make -j $CPU_COUNT VERBOSE=1 >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 if [[ $(uname) == Linux ]]; then
