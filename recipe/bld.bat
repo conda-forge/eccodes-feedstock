@@ -21,7 +21,7 @@ nmake
 if errorlevel 1 exit 1
 
 :: so tests can find eccodes.dll
-set PATH=%PATH%;%SRC_DIR%\eccodes\build\bin
+set PATH=%PATH%;%SRC_DIR%\build\bin
 
 ctest
 if errorlevel 1 exit 1
