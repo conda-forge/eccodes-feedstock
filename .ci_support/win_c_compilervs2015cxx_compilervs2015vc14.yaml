@@ -1,0 +1,23 @@
+c_compiler:
+- vs2015
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2015
+hdf5:
+- 1.10.4
+libnetcdf:
+- '4.6'
+pin_run_as_build:
+  libnetcdf:
+    max_pin: x.x
+  vc:
+    max_pin: x
+vc:
+- '14'
+zip_keys:
+- - vc
+  - c_compiler
+  - cxx_compiler

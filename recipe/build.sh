@@ -33,6 +33,7 @@ PING_LOOP_PID=$!
 ## START BUILD
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
+  export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
