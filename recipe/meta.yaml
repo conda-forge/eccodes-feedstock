@@ -9,7 +9,7 @@ source:
   sha256: 455c05badd3554d6f67dff713f6991164b43ed835e1b8a9da7b728499f22932d
 
 build:
-  number: 1000
+  number: 1001
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
   features:
@@ -48,6 +48,8 @@ test:
     - codes_info
     - ls $(codes_info -s)  # [not win]
     - ls $(codes_info -d)  # [not win]
+    - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -s`) DO (ls %%F)  # [win]
+    - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -d`) DO (ls %%F)  # [win]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
