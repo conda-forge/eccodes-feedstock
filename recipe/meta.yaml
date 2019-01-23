@@ -16,11 +16,12 @@ build:
     - vc14  # [win and py>=35]
 
 requirements:
-  host:
-    - cmake
+  build:
     - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+  host:
+    - cmake
     - m2-bash  # [win]
     - m2-findutils  # [win]
     - m2-coreutils  # [win]
