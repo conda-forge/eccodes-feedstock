@@ -62,6 +62,9 @@ ctest -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
 fi
 make install >> $BUILD_OUTPUT 2>&1
 
+# Replace any leaked build env
+find $PREFIX -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g" >> $BUILD_OUTPUT 2>&1
+
 # The build finished without returning an error so dump a tail of the output.
 dump_output
 
