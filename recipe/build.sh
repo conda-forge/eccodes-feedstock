@@ -13,6 +13,12 @@ fi
 
 touch $BUILD_OUTPUT
 
+if [[ $(uname) == Linux ]]; then
+    export CC=$(basename ${CC})
+    export CXX=$(basename ${CXX})
+    export FC=$(basename ${FC})
+fi
+
 dump_output() {
    echo Tailing the last 500 lines of output:
    tail -500 $BUILD_OUTPUT
