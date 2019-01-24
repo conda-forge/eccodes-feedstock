@@ -63,7 +63,11 @@ fi
 make install >> $BUILD_OUTPUT 2>&1
 
 # Replace any leaked build env
-find $PREFIX -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g" >> $BUILD_OUTPUT 2>&1
+if [[ $(uname) == Linux ]]; then
+    find $PREFIX/include -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g" >> $BUILD_OUTPUT 2>&1
+    find $PREFIX/lib/pkgconfig -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g" >> $BUILD_OUTPUT 2>&1
+    find $PREFIX/share/eccodes/cmake -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g" >> $BUILD_OUTPUT 2>&1
+fi
 
 # The build finished without returning an error so dump a tail of the output.
 dump_output
