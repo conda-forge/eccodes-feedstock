@@ -49,7 +49,7 @@ cmake $src_dir \
          -DCMAKE_INSTALL_PREFIX=$PREFIX \
          -DENABLE_JPG=1 \
          -DENABLE_NETCDF=1 \
-         -DENABLE_PNG=1 \
+         -DENABLE_PNG=0 \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=1 \
          -DENABLE_AEC=1
