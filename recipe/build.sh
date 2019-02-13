@@ -63,9 +63,9 @@ cmake $src_dir \
 make -j $CPU_COUNT VERBOSE=1 >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-if [[ $(uname) == Linux ]]; then
+
 ctest --output-on-failure -j $CPU_COUNT >> $BUILD_OUTPUT 2>&1
-fi
+
 make install >> $BUILD_OUTPUT 2>&1
 
 # Replace any leaked build env
