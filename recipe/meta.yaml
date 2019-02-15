@@ -1,15 +1,15 @@
-{% set version = "2.11.0" %}
+{% set version = "2.12.0" %}
 
 package:
   name: eccodes
   version: {{ version }}
 
 source:
-  url: https://software.ecmwf.int/wiki/download/attachments/131371724/eccodes-{{ version }}-Source.tar.gz
-  sha256: 455c05badd3554d6f67dff713f6991164b43ed835e1b8a9da7b728499f22932d
+  url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
+  sha256: f75ae5ce9e543622e8e40c3037619f8d9e6542c902933adb371bac82aee91367
 
 build:
-  number: 1007
+  number: 0
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
   features:
