@@ -31,7 +31,7 @@ requirements:
     - m2-diffutils  # [win]
     - perl  # [not win]
     - m2-perl  # [win]
-    - jasper  # [not win]
+    - jasper=1.900.31  # [not win]
     - libpng  # [not win]
     - libnetcdf
     - libaec  # [not win]
