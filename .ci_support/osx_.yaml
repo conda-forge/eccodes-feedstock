@@ -14,8 +14,6 @@ fortran_compiler_version:
 - '4'
 hdf5:
 - 1.10.4
-jasper:
-- 1.900.1
 libnetcdf:
 - '4.6'
 libpng:
@@ -27,8 +25,6 @@ macos_min_version:
 perl:
 - '5.26'
 pin_run_as_build:
-  jasper:
-    max_pin: x
   libnetcdf:
     max_pin: x.x
   libpng:

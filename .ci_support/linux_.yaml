@@ -12,8 +12,6 @@ fortran_compiler:
 - gfortran
 hdf5:
 - 1.10.4
-jasper:
-- 1.900.1
 libnetcdf:
 - '4.6'
 libpng:
@@ -21,8 +19,6 @@ libpng:
 perl:
 - '5.26'
 pin_run_as_build:
-  jasper:
-    max_pin: x
   libnetcdf:
     max_pin: x.x
   libpng:
