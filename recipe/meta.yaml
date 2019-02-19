@@ -9,7 +9,7 @@ source:
   sha256: f75ae5ce9e543622e8e40c3037619f8d9e6542c902933adb371bac82aee91367
 
 build:
-  number: 1
+  number: 1000
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
   features:
@@ -17,7 +17,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }}  # [not win]
+    - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
