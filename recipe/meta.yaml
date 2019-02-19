@@ -17,7 +17,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }} # [not win]
+    - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
@@ -25,7 +25,8 @@ requirements:
     - m2-bash  # [win]
     - m2-findutils  # [win]
     - m2-coreutils  # [win]
-    - m2w64-gcc-fortran # [win]
+    - m2w64-gcc-fortran  # [win]
+    - m2w64-toolchain  # [win]
     - m2-grep  # [win]
     - m2-sed  # [win]
     - m2-gawk  # [win]
