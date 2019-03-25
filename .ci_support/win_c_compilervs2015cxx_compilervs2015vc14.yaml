@@ -9,10 +9,10 @@ cxx_compiler:
 hdf5:
 - 1.10.4
 libnetcdf:
-- '4.6'
+- 4.6.2
 pin_run_as_build:
   libnetcdf:
-    max_pin: x.x
+    max_pin: x.x.x
   vc:
     max_pin: x
 vc:
