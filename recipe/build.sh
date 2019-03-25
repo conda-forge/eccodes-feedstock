@@ -40,8 +40,10 @@ PING_LOOP_PID=$!
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
+  export REPLACE_TPL_ABSOLUTE_PATHS=0
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
+  export REPLACE_TPL_ABSOLUTE_PATHS=1
 fi
 
 export PYTHON=
@@ -58,7 +60,8 @@ cmake $src_dir \
          -DENABLE_PNG=1 \
          -DENABLE_PYTHON=0 \
          -DENABLE_FORTRAN=1 \
-         -DENABLE_AEC=1
+         -DENABLE_AEC=1 \
+         -DREPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS
 
 make -j $CPU_COUNT VERBOSE=1 >> $BUILD_OUTPUT 2>&1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
