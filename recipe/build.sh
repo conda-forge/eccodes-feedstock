@@ -43,10 +43,3 @@ eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 ctest --output-on-failure -j $CPU_COUNT
 
 make install
-
-# Replace any leaked build env.
-if [[ $(uname) == Linux ]]; then
-    find $PREFIX/include -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-    find $PREFIX/lib/pkgconfig -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-    find $PREFIX/share/eccodes/cmake -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-fi
