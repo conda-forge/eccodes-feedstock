@@ -22,6 +22,13 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cmake
+    - jasper  # [not win]
+    - libpng  # [not win]
+    - libnetcdf
+    - libaec  # [not win]
+    - hdf5
+    # These are only used for testing, that is why we don't need them in `run`.
+    - perl  # [not win]
     - m2-bash  # [win]
     - m2-findutils  # [win]
     - m2-coreutils  # [win]
@@ -29,15 +36,9 @@ requirements:
     - m2-sed  # [win]
     - m2-gawk  # [win]
     - m2-diffutils  # [win]
-    - perl  # [not win]
     - m2-perl  # [win]
-    - jasper=1.900.1  # [not win]
-    - libpng  # [not win]
-    - libnetcdf
-    - libaec  # [not win]
-    - hdf5
   run:
-    - jasper=1.900.1  # [not win]
+    - jasper  # [not win]
     - libpng  # [not win]
     - libnetcdf
     - libaec  # [not win]
