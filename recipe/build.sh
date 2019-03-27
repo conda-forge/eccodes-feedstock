@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 set -e
 
 if [[ "$c_compiler" == "gcc" ]]; then
@@ -26,18 +25,16 @@ export PYTHON=
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
-src_dir="$(pwd)"
-mkdir ../build
-cd ../build
-cmake $src_dir \
-         -DCMAKE_INSTALL_PREFIX=$PREFIX \
-         -DENABLE_JPG=1 \
-         -DENABLE_NETCDF=1 \
-         -DENABLE_PNG=1 \
-         -DENABLE_PYTHON=0 \
-         -DENABLE_FORTRAN=1 \
-         -DENABLE_AEC=1 \
-         -DREPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS
+mkdir ../build && cd ../build
+cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
+      -D ENABLE_JPG=1 \
+      -D ENABLE_NETCDF=1 \
+      -D ENABLE_PNG=1 \
+      -D ENABLE_PYTHON=0 \
+      -D ENABLE_FORTRAN=1 \
+      -D ENABLE_AEC=1 \
+      -D REPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS \
+      $SRC_DIR
 
 make -j $CPU_COUNT VERBOSE=1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
@@ -47,7 +44,7 @@ ctest --output-on-failure -j $CPU_COUNT
 
 make install
 
-# Replace any leaked build env
+# Replace any leaked build env.
 if [[ $(uname) == Linux ]]; then
     find $PREFIX/include -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
     find $PREFIX/lib/pkgconfig -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
