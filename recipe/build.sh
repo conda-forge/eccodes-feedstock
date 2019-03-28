@@ -2,9 +2,7 @@
 
 set -e
 
-if [[ "$c_compiler" == "gcc" ]]; then
-  export PATH="${PATH}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib"
-fi
+export CMAKE_PREFIX_PATH=${PREFIX}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib
 
 if [[ $(uname) == Linux ]]; then
     export CC=$(basename ${CC})
