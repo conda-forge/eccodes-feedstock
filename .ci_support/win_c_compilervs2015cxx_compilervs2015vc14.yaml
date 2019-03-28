@@ -10,6 +10,8 @@ hdf5:
 - 1.10.4
 libnetcdf:
 - 4.6.2
+m2w64_fortran_compiler:
+- m2w64-toolchain
 pin_run_as_build:
   libnetcdf:
     max_pin: x.x.x
