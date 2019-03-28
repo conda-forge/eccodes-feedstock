@@ -2,7 +2,7 @@
 
 set -e
 
-export CMAKE_PREFIX_PATH=${PREFIX}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib
+export CMAKE_PREFIX_PATH="${CMAKE_PREFIX_PATH}:${PREFIX}:${BUILD_PREFIX}/${HOST}/sysroot/usr"
 
 if [[ $(uname) == Linux ]]; then
     export CC=$(basename ${CC})
