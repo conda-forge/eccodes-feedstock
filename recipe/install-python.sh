@@ -26,7 +26,7 @@ export PYTHON_LDFLAGS="${PREFIX}/lib"
 export LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"
 export CFLAGS="${CFLAGS} -fPIC -I${PREFIX}/include"
 
-mkdir ../build-python && cd ../build-python
+mkdir ../build-python${PY_VER} && cd ../build-python${PY_VER}
 cmake -D CMAKE_INSTALL_PREFIX=${PREFIX} \
       -D ENABLE_JPG=1 \
       -D ENABLE_NETCDF=1 \
