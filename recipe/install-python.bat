@@ -1,4 +1,4 @@
-mkdir build && cd build
+mkdir build-python && cd build-python
 
 set CFLAGS=
 set CXXFLAGS=
