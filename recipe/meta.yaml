@@ -12,8 +12,6 @@ build:
   number: 0
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
-  features:
-    - vc14  # [win and py>=35]
 
 requirements:
   build:
@@ -23,7 +21,7 @@ requirements:
   host:
     - cmake
     - jasper  # [not win]
-    - libpng  # [not win]
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
@@ -39,7 +37,7 @@ requirements:
     - m2-perl  # [win]
   run:
     - jasper  # [not win]
-    - libpng  # [not win]
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
