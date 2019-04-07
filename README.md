@@ -7,7 +7,7 @@ Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
+Summary: ECMWF ecCodes Copyright 2005-2018 ECMWF
 
 
 
@@ -70,6 +70,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-eccodes-green.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/eccodes.svg)](https://anaconda.org/conda-forge/eccodes) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--eccodes-green.svg)](https://anaconda.org/conda-forge/python-eccodes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-eccodes.svg)](https://anaconda.org/conda-forge/python-eccodes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-eccodes.svg)](https://anaconda.org/conda-forge/python-eccodes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-eccodes.svg)](https://anaconda.org/conda-forge/python-eccodes) |
 
 Installing eccodes
 ==================
@@ -80,10 +81,10 @@ Installing `eccodes` from the `conda-forge` channel can be achieved by adding `c
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `eccodes` can be installed with:
+Once the `conda-forge` channel has been enabled, `eccodes, python-eccodes` can be installed with:
 
 ```
-conda install eccodes
+conda install eccodes python-eccodes
 ```
 
 It is possible to list all of the versions of `eccodes` available on your platform with:

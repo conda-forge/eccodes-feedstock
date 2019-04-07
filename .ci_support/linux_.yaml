@@ -1,3 +1,5 @@
+boost:
+- 1.68.0
 c_compiler:
 - gcc
 c_compiler_version:
@@ -24,9 +26,13 @@ libnetcdf:
 - 4.6.2
 libpng:
 - 1.6.35
+numpy:
+- '1.9'
 perl:
 - '5.26'
 pin_run_as_build:
+  boost:
+    max_pin: x.x.x
   jasper:
     max_pin: x
   libnetcdf:
@@ -35,3 +41,10 @@ pin_run_as_build:
     max_pin: x.x
   perl:
     max_pin: x.x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- '2.7'
+- '3.6'
+- '3.7'
