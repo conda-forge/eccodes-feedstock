@@ -9,7 +9,7 @@ source:
   sha256: 6dafe2fe3a9994ab2359f8bf8f6bad04dc4f936918999cf01e026323882b6b77
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -50,11 +50,56 @@ test:
     - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -s`) DO (ls %%F)  # [win]
     - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -d`) DO (ls %%F)  # [win]
 
+outputs:
+  - name: eccodes
+
+  - name: python-eccodes
+    script: install-python.sh  # [not win]
+    script: install-python.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('fortran') }}  # [not win]
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+      host:
+        - python
+        - numpy
+        - boost
+        - cmake
+        - jasper  # [not win]
+        - libpng
+        - libnetcdf
+        - libaec  # [not win]
+        - hdf5
+        # These are only used for testing, that is why we don't need them in `run`.
+        - perl  # [not win]
+        - m2-bash  # [win]
+        - m2-findutils  # [win]
+        - m2-coreutils  # [win]
+        - m2-grep  # [win]
+        - m2-sed  # [win]
+        - m2-gawk  # [win]
+        - m2-diffutils  # [win]
+        - m2-perl  # [win]
+        - {{ pin_subpackage('eccodes', exact=True) }}
+      run:
+        - python
+        - {{ pin_compatible('numpy') }}
+        - jasper
+        - libpng
+        - libnetcdf
+        - hdf5
+        - {{ pin_subpackage('eccodes', exact=True) }}
+    test:
+      imports:
+        - eccodes
+        - gribapi
+
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
   license: Apache 2.0
   license_family: Apache
-  summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
+  summary: ECMWF ecCodes Copyright 2005-2018 ECMWF
 
 extra:
   recipe-maintainers:

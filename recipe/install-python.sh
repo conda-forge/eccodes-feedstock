@@ -21,32 +21,20 @@ elif [[ $(uname) == Linux ]]; then
   export REPLACE_TPL_ABSOLUTE_PATHS=1
 fi
 
-export PYTHON=""
+export PYTHON="${PYTHON}"
+export PYTHON_LDFLAGS="${PREFIX}/lib"
 export LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"
 export CFLAGS="${CFLAGS} -fPIC -I${PREFIX}/include"
 
-mkdir ../build && cd ../build
+mkdir ../build-python && cd ../build-python
 cmake -D CMAKE_INSTALL_PREFIX=${PREFIX} \
       -D ENABLE_JPG=1 \
       -D ENABLE_NETCDF=1 \
       -D ENABLE_PNG=1 \
-      -D ENABLE_PYTHON=0 \
-      -D ENABLE_FORTRAN=1 \
+      -D ENABLE_PYTHON=1 \
+      -D ENABLE_FORTRAN=0 \
       -D ENABLE_AEC=1 \
-      -D REPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS \
       ${SRC_DIR}
 
 make -j $CPU_COUNT VERBOSE=1
-export ECCODES_TEST_VERBOSE_OUTPUT=1
-eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
-
-ctest --output-on-failure -j $CPU_COUNT
-
 make install
-
-# Replace any leaked build env.
-if [[ $(uname) == Linux ]]; then
-    find $PREFIX/include -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-    find $PREFIX/lib/pkgconfig -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-    find $PREFIX/share/eccodes/cmake -type f -print0 | xargs -0 sed -i "s@${BUILD_PREFIX}@${PREFIX}@g"
-fi
