@@ -2,7 +2,6 @@ mkdir build-python%PY_VER% && cd build-python%PY_VER%
 
 set CFLAGS=
 set CXXFLAGS=
-set HAVE_STRING_H=1
 
 cmake -G "NMake Makefiles" ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
