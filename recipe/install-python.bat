@@ -10,7 +10,7 @@ cmake -G "NMake Makefiles" ^
       -D ENABLE_PYTHON=1 ^
       -D ENABLE_NETCDF=0 ^
       -D ENABLE_JPG=0 ^
-      -D IEEE_LE=0 ^
+      -D IEEE_LE=1 ^
       -D ENABLE_MEMFS=0 ^
       -D ENABLE_EXTRA_TESTS=OFF ^
       %SRC_DIR%
