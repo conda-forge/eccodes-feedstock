@@ -1,0 +1,59 @@
+--- eccodes-2.12.3-Source.orig/python3/setup.py.in	2019-02-27 09:30:50.000000000 -0300
++++ eccodes-2.12.3-Source/python3/setup.py.in	2019-04-08 10:37:20.299943734 -0300
+@@ -35,34 +35,34 @@
+     add_attribute = lambda **args: [list.append(attdict[key], value)
+                                     for key, value in args.items()]
+ 
+-    if @HAVE_LIBJASPER@:
+-        jasper_dir = '@JASPER_DIR@'
+-        if jasper_dir and jasper_dir != 'system':
+-            add_attribute(library_dirs=os.path.join(jasper_dir, 'lib'),
+-                          runtime_library_dirs=os.path.join(jasper_dir, 'lib'))
+-        add_attribute(libraries='jasper')
+-
+-    if @HAVE_LIBOPENJPEG@:
+-        openjpeg_lib_dir = '@OPENJPEG_LIB_DIR@'
+-        openjpeg_libname = '@OJ_WITHOUT_LIB@'
+-        if openjpeg_lib_dir:
+-            add_attribute(library_dirs=openjpeg_lib_dir,
+-                          runtime_library_dirs=openjpeg_lib_dir)
+-        add_attribute(libraries=openjpeg_libname)
++#     if @HAVE_LIBJASPER@:
++#         jasper_dir = '@JASPER_DIR@'
++#         if jasper_dir and jasper_dir != 'system':
++#             add_attribute(library_dirs=os.path.join(jasper_dir, 'lib'),
++#                           runtime_library_dirs=os.path.join(jasper_dir, 'lib'))
++#         add_attribute(libraries='jasper')
++
++#     if @HAVE_LIBOPENJPEG@:
++#         openjpeg_lib_dir = '@OPENJPEG_LIB_DIR@'
++#         openjpeg_libname = '@OJ_WITHOUT_LIB@'
++#         if openjpeg_lib_dir:
++#             add_attribute(library_dirs=openjpeg_lib_dir,
++#                           runtime_library_dirs=openjpeg_lib_dir)
++#         add_attribute(libraries=openjpeg_libname)
+ 
+     # assumes png is supplied by system paths -- may not be true
+     if @HAVE_LIBPNG@:
+         add_attribute(libraries='png')
+ 
+-    if @HAVE_MEMFS@:
+-        add_attribute(libraries='eccodes_memfs')
++#     if @HAVE_MEMFS@:
++#         add_attribute(libraries='eccodes_memfs')
+ 
+-    if @HAVE_AEC@:
+-        aec_dir = '@AEC_DIR@'
+-        if aec_dir and aec_dir != 'system':
+-            add_attribute(library_dirs=os.path.join(aec_dir, 'lib'),
+-                          runtime_library_dirs=os.path.join(aec_dir, 'lib'))
+-        add_attribute(libraries='aec')
++#     if @HAVE_AEC@:
++#         aec_dir = '@AEC_DIR@'
++#         if aec_dir and aec_dir != 'system':
++#             add_attribute(library_dirs=os.path.join(aec_dir, 'lib'),
++#                           runtime_library_dirs=os.path.join(aec_dir, 'lib'))
++#         add_attribute(libraries='aec')
+ 
+ 
+ setup(name='eccodes',
