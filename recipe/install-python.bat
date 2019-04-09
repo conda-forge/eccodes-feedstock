@@ -13,8 +13,11 @@ cmake -G "NMake Makefiles" ^
       -D IEEE_LE=1 ^
       -D ENABLE_MEMFS=0 ^
       -D ENABLE_EXTRA_TESTS=OFF ^
+      -D BUILD_SHARED_LIBS=ON ^
       %SRC_DIR%
 if errorlevel 1 exit 1
+
+type python3/setup.py
 
 nmake
 if errorlevel 1 exit 1
