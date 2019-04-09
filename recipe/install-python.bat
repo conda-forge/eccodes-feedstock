@@ -17,7 +17,7 @@ cmake -G "NMake Makefiles" ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 
-type python3/setup.py
+type python3\setup.py
 
 nmake
 if errorlevel 1 exit 1
