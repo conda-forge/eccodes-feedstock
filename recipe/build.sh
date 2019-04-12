@@ -6,12 +6,6 @@ if [[ "$c_compiler" == "gcc" ]]; then
   export PATH="${PATH}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib"
 fi
 
-if [[ $(uname) == Linux ]]; then
-    export CC=$(basename ${CC})
-    export CXX=$(basename ${CXX})
-    export FC=$(basename ${FC})
-fi
-
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
