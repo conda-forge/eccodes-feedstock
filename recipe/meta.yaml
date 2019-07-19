@@ -1,4 +1,4 @@
-{% set version = "2.12.3" %}
+{% set version = "2.13.0" %}
 
 package:
   name: eccodes
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
-  sha256: 6dafe2fe3a9994ab2359f8bf8f6bad04dc4f936918999cf01e026323882b6b77
+  sha256: c5ce1183b5257929fc1f1c8496239e52650707cfab24f4e0e1f1a471135b8272
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
   features:
