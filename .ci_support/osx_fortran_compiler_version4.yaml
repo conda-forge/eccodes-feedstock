@@ -23,7 +23,7 @@ jasper:
 libnetcdf:
 - 4.6.2
 libpng:
-- 1.6.35
+- '1.6'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
