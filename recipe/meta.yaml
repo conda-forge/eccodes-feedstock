@@ -12,8 +12,6 @@ build:
   number: 1
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
-  features:
-    - vc14  # [win and py>=35]
 
 requirements:
   build:
