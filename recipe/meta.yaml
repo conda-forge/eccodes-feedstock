@@ -9,7 +9,7 @@ source:
   sha256: 158021539a85ca597075f4a534117721ea51f5ddea44b5ec27519d553c980f8d
 
 build:
-  number: 1
+  number: 1000
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -20,6 +20,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cmake
+    - python
+    - pip
     - jasper  # [not win]
     - libpng  # [not win]
     - libnetcdf
@@ -35,12 +37,14 @@ requirements:
     - m2-gawk  # [win]
     - m2-diffutils  # [win]
     - m2-perl  # [win]
+    - eccodes-python
   run:
     - jasper  # [not win]
     - libpng  # [not win]
     - libnetcdf
     - libaec  # [not win]
     - hdf5
+    - eccodes-python
 
 test:
   commands:
@@ -49,6 +53,8 @@ test:
     - ls $(codes_info -d)  # [not win]
     - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -s`) DO (ls %%F)  # [win]
     - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -d`) DO (ls %%F)  # [win]
+  imports:
+    - eccodes
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
