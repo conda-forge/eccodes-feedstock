@@ -53,7 +53,7 @@ test:
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
   license: Apache 2.0
-  license_file: ['LICENSE', 'COPYING', 'license.pl']
+  license_file: ['LICENSE']
   license_family: Apache
   summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
 
