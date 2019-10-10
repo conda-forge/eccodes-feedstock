@@ -1,4 +1,4 @@
-{% set version = "2.14.0" %}
+{% set version = "2.14.1" %}
 
 package:
   name: eccodes
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
-  sha256: 6908f84b803c58c311362712e22981bca90c29af8771038a98e110776632bc27
+  sha256: 16da742691c0ac81ccc378ae3f97311ef0dfdc82505aa4c652eb773e911cc9d6
 
 build:
   number: 0
@@ -53,6 +53,7 @@ test:
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
   license: Apache 2.0
+  license_file: ['LICENSE', 'COPYING', 'license.pl']
   license_family: Apache
   summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
 
