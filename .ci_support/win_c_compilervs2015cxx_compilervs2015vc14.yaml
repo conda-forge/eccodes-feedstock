@@ -10,9 +10,13 @@ hdf5:
 - 1.10.5
 libnetcdf:
 - 4.7.1
+openjpeg:
+- '2.3'
 pin_run_as_build:
   libnetcdf:
     max_pin: x.x.x
+  openjpeg:
+    max_pin: x.x
   vc:
     max_pin: x
 vc:
