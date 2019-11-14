@@ -6,6 +6,8 @@ set CXXFLAGS=
 cmake -G "NMake Makefiles" ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -D CMAKE_BUILD_TYPE=Release ^
+      -D OPENJPEG_INCLUDE_DIR=%LIBRARY_INC%\openjpeg-2.3 ^
+      -D OPENJPEG_PATH=%LIBRARY_PREFIX% ^
       -D ENABLE_FORTRAN=0 ^
       -D ENABLE_PYTHON=0 ^
       -D ENABLE_NETCDF=1 ^

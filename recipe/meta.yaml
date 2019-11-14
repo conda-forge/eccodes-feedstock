@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cmake
-    - jasper  # [not win]
+    - openjpeg 
     - libpng  # [not win]
     - libnetcdf
     - libaec  # [not win]
@@ -36,7 +36,7 @@ requirements:
     - m2-diffutils  # [win]
     - m2-perl  # [win]
   run:
-    - jasper  # [not win]
+    - openjpeg
     - libpng  # [not win]
     - libnetcdf
     - libaec  # [not win]
