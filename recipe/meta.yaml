@@ -21,7 +21,7 @@ requirements:
   host:
     - cmake
     - openjpeg 
-    - libpng  # [not win]
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
@@ -37,7 +37,7 @@ requirements:
     - m2-perl  # [win]
   run:
     - openjpeg
-    - libpng  # [not win]
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
