@@ -7,9 +7,11 @@ package:
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
   sha256: 16da742691c0ac81ccc378ae3f97311ef0dfdc82505aa4c652eb773e911cc9d6
+  patches:
+    - fix-tests-path.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -20,8 +22,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cmake
-    - jasper  # [not win]
-    - libpng  # [not win]
+    - openjpeg 
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
@@ -36,8 +38,8 @@ requirements:
     - m2-diffutils  # [win]
     - m2-perl  # [win]
   run:
-    - jasper  # [not win]
-    - libpng  # [not win]
+    - openjpeg
+    - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5

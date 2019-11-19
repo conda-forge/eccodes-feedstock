@@ -1,0 +1,25 @@
+--- tests/include.ctest.sh.in.orig	2019-11-18 20:02:38.000000000 -0700
++++ tests/include.ctest.sh.in		2019-11-18 20:03:08.000000000 -0700
+@@ -42,3 +42,5 @@
+ HAVE_MEMFS=@HAVE_MEMFS@
+ 
+ echo "Current directory: `pwd`"
++
++export PATH=$PATH:$LIBRARY_BIN
+--- examples/C/include.ctest.sh.in.orig	        2019-11-18 20:02:38.000000000 -0700
++++ examples/C/include.ctest.sh.in		2019-11-18 20:03:08.000000000 -0700
+@@ -24,3 +24,5 @@
+ samp_dir="@CMAKE_BINARY_DIR@/@ECCODES_SAMPLES_SUFF@"
+ ECCODES_SAMPLES_PATH=${samp_dir}
+ export ECCODES_SAMPLES_PATH
++ 
++export PATH=$PATH:$LIBRARY_BIN
+--- examples/python/include.ctest.sh.in.orig	2019-11-18 20:02:38.000000000 -0700
++++ examples/python/include.ctest.sh.in		2019-11-18 20:03:08.000000000 -0700
+@@ -22,3 +22,5 @@
+ export PYTHONPATH
+ 
+ echo "Current directory: `pwd`"
++
++export PATH=$PATH:$LIBRARY_BIN
+
