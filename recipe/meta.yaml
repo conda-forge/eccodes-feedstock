@@ -11,7 +11,7 @@ source:
     - fix-tests-path.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -22,7 +22,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cmake
-    - openjpeg 
+    - jasper  # [not win]
+    - openjpeg   # [win]
     - libpng
     - libnetcdf
     - libaec  # [not win]
@@ -38,7 +39,8 @@ requirements:
     - m2-diffutils  # [win]
     - m2-perl  # [win]
   run:
-    - openjpeg
+    - jasper  # [not win]
+    - openjpeg   # [win]
     - libpng
     - libnetcdf
     - libaec  # [not win]
