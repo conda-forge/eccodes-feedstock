@@ -21,7 +21,7 @@ hdf5:
 jasper:
 - 1.900.1
 libnetcdf:
-- 4.7.1
+- 4.7.3
 libpng:
 - '1.6'
 perl:

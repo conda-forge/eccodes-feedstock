@@ -12,7 +12,7 @@ source:
     - bufr-extract-headers-hotfix.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
