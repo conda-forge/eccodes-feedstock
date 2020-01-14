@@ -3,7 +3,7 @@
 @@ -42,3 +42,5 @@
  HAVE_MEMFS=@HAVE_MEMFS@
  ECCODES_ON_WINDOWS=@ECCODES_ON_WINDOWS@
- 
+
  echo "Current directory: `pwd`"
 +
 +export PATH=$PATH:$LIBRARY_BIN
