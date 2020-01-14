@@ -2,7 +2,8 @@
 +++ tests/include.ctest.sh.in		2019-11-18 20:03:08.000000000 -0700
 @@ -42,3 +42,5 @@
  HAVE_MEMFS=@HAVE_MEMFS@
- 
+ ECCODES_ON_WINDOWS=@ECCODES_ON_WINDOWS@
+
  echo "Current directory: `pwd`"
 +
 +export PATH=$PATH:$LIBRARY_BIN
