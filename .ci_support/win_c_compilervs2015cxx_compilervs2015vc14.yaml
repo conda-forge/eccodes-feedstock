@@ -15,8 +15,6 @@ libpng:
 openjpeg:
 - '2.3'
 pin_run_as_build:
-  libnetcdf:
-    max_pin: x.x.x
   libpng:
     max_pin: x.x
   openjpeg:
