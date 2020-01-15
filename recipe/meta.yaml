@@ -9,7 +9,6 @@ source:
   sha256: 141406b724d531fde5ca908a00f9382e1426e32b24d3d96dc31cb2392e7ff8a3
   patches:
     - fix-tests-path.patch
-    - bufr-extract-headers-hotfix.patch
 
 build:
   number: 0
