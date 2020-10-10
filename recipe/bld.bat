@@ -13,6 +13,7 @@ cmake -G "NMake Makefiles" ^
       -D ENABLE_NETCDF=1 ^
       -D ENABLE_JPG=1 ^
       -D ENABLE_PNG=1 ^
+      -D ENABLE_ECCODES_THREADS=1 ^
       -D IEEE_LE=1 ^
       -D ENABLE_MEMFS=0 ^
       -D ENABLE_EXTRA_TESTS=OFF ^
