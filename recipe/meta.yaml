@@ -28,7 +28,7 @@ requirements:
     - libnetcdf
     - libaec  # [not win]
     - hdf5
-    - pthreads-win32 # [win]
+    - pthreads-win32  # [win]
     # These are only used for testing, that is why we don't need them in `run`.
     - perl  # [not win]
     - m2-bash  # [win]
@@ -46,7 +46,7 @@ requirements:
     - libnetcdf
     - libaec  # [not win]
     - hdf5
-    - pthreads-win32 # [win]
+    - pthreads-win32  # [win]
 
 test:
   commands:
