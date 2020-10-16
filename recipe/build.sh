@@ -20,6 +20,10 @@ export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
 mkdir ../build && cd ../build
+
+env | sort
+
+
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
       -D ENABLE_JPG=1 \
