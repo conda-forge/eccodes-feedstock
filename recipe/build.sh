@@ -21,9 +21,6 @@ export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
 mkdir ../build && cd ../build
 
-env | sort
-ls -l $PREFIX/lib/
-
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
       -D ENABLE_JPG=1 \
