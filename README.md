@@ -7,7 +7,7 @@ Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/eccodes-feedstock/blob/master/LICENSE.txt)
 
-Summary: ECMWF ecCodes Copyright 2005-2018 ECMWF.
+Summary: ECMWF ecCodes Copyright 2005- ECMWF.
 
 Current build status
 ====================
