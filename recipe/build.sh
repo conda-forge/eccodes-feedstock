@@ -23,6 +23,7 @@ mkdir ../build && cd ../build
 
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
+      -D INSTALL_LIB_DIR='lib' \
       -D ENABLE_JPG=1 \
       -D ENABLE_NETCDF=1 \
       -D ENABLE_PNG=1 \
