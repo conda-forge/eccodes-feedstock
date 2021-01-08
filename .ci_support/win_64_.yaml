@@ -13,7 +13,7 @@ libnetcdf:
 libpng:
 - '1.6'
 openjpeg:
-- '2.3'
+- '2.4'
 pin_run_as_build:
   libpng:
     max_pin: x.x
