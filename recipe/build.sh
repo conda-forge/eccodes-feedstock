@@ -9,7 +9,7 @@ fi
 if [[ $(uname) == Darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
-  export REPLACE_TPL_ABSOLUTE_PATHS=0
+  export REPLACE_TPL_ABSOLUTE_PATHS=1
 elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
