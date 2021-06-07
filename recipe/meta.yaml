@@ -20,8 +20,8 @@ requirements:
     - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
     - cmake
+  host:
     - jasper  # [not win]
     - openjpeg   # [win]
     - libpng
