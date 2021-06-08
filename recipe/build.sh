@@ -6,12 +6,16 @@ if [[ "$c_compiler" == "gcc" ]]; then
   export PATH="${PATH}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib"
 fi
 
-if [[ $(uname) == Darwin ]]; then
+export BUILD_FORTRAN=1
+if [[ $HOST_PLATFORM =~ osx ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
   export REPLACE_TPL_ABSOLUTE_PATHS=1
-  export MACOS_LE_FLAG="-D IEEE_LE=1"
-elif [[ $(uname) == Linux ]]; then
+  if [[ $HOST_PLATFORM =~ arm64 ]]; then
+    export MACOS_LE_FLAG="-D IEEE_LE=1"
+    export BUILD_FORTRAN=0
+  fi
+elif [[ $HOST_PLATFORM =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
 fi
@@ -29,7 +33,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_NETCDF=1 \
       -D ENABLE_PNG=1 \
       -D ENABLE_PYTHON=0 \
-      -D ENABLE_FORTRAN=0 \
+      -D ENABLE_FORTRAN=$BUILD_FORTRAN \
       -D ENABLE_ECCODES_THREADS=1 \
       -D ENABLE_AEC=1 \
       -D REPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS \
