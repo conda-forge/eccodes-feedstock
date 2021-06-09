@@ -7,7 +7,7 @@ if [[ "$c_compiler" == "gcc" ]]; then
 fi
 
 export BUILD_FORTRAN=1
-if [[ $HOST =~ osx ]]; then
+if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
   export REPLACE_TPL_ABSOLUTE_PATHS=1
