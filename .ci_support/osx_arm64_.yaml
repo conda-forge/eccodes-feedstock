@@ -1,0 +1,43 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
+c_compiler:
+- clang
+c_compiler_version:
+- '11'
+channel_sources:
+- conda-forge/label/rust_dev,conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '11'
+fortran_compiler:
+- gfortran
+fortran_compiler_version:
+- '11'
+hdf5:
+- 1.10.6
+jasper:
+- '2'
+libnetcdf:
+- 4.8.0
+libpng:
+- '1.6'
+macos_machine:
+- arm64-apple-darwin20.0.0
+perl:
+- 5.32.0
+pin_run_as_build:
+  jasper:
+    max_pin: x
+  libpng:
+    max_pin: x.x
+  perl:
+    max_pin: x.x.x
+target_platform:
+- osx-arm64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version

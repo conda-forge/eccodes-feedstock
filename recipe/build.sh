@@ -6,11 +6,16 @@ if [[ "$c_compiler" == "gcc" ]]; then
   export PATH="${PATH}:${BUILD_PREFIX}/${HOST}/sysroot/usr/lib"
 fi
 
-if [[ $(uname) == Darwin ]]; then
+export BUILD_FORTRAN=1
+if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
   export REPLACE_TPL_ABSOLUTE_PATHS=1
-elif [[ $(uname) == Linux ]]; then
+  if [[ $HOST =~ arm64 ]]; then
+    export MACOS_LE_FLAG="-D IEEE_LE=1"
+    export BUILD_FORTRAN=0
+  fi
+elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
 fi
@@ -28,7 +33,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_NETCDF=1 \
       -D ENABLE_PNG=1 \
       -D ENABLE_PYTHON=0 \
-      -D ENABLE_FORTRAN=1 \
+      -D ENABLE_FORTRAN=$BUILD_FORTRAN \
       -D ENABLE_ECCODES_THREADS=1 \
       -D ENABLE_AEC=1 \
       -D REPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS \
@@ -36,12 +41,15 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_FIND_ROOT_PATH_MODE_INCLUDE=BOTH \
       -D CMAKE_PROGRAM_PATH=$BUILD_PREFIX \
       -D ECBUILD_LOG_LEVEL=DEBUG \
+      $MACOS_LE_FLAG \
       $SRC_DIR
 
 make -j $CPU_COUNT VERBOSE=1
 export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest --output-on-failure -j $CPU_COUNT
+fi
 
 make install
