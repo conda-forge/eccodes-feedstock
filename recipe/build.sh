@@ -7,15 +7,15 @@ if [[ "$c_compiler" == "gcc" ]]; then
 fi
 
 export BUILD_FORTRAN=1
-if [[ $HOST_PLATFORM =~ osx ]]; then
+if [[ $HOST =~ osx ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
   export REPLACE_TPL_ABSOLUTE_PATHS=1
-  if [[ $HOST_PLATFORM =~ arm64 ]]; then
+  if [[ $HOST =~ arm64 ]]; then
     export MACOS_LE_FLAG="-D IEEE_LE=1"
     export BUILD_FORTRAN=0
   fi
-elif [[ $HOST_PLATFORM =~ linux ]]; then
+elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
 fi
