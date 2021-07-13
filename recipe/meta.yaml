@@ -51,8 +51,6 @@ test:
     - codes_info
     - ls $(codes_info -s)  # [not win]
     - ls $(codes_info -d)  # [not win]
-    - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -s`) DO (ls %%F)  # [win]
-    - for /F "tokens=* USEBACKQ" %%F IN (`codes_info -d`) DO (ls %%F)  # [win]
 
 about:
   home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
