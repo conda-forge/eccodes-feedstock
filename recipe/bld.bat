@@ -14,7 +14,7 @@ cmake -G "NMake Makefiles" ^
       -D ENABLE_JPG=1 ^
       -D ENABLE_PNG=1 ^
       -D IEEE_LE=1 ^
-      -D ENABLE_MEMFS=0 ^
+      -D ENABLE_MEMFS=1 ^
       -D ENABLE_EXTRA_TESTS=OFF ^
       %SRC_DIR%
 if errorlevel 1 exit 1
