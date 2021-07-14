@@ -14,7 +14,7 @@ cmake -G "NMake Makefiles" ^
       -D ENABLE_JPG=1 ^
       -D ENABLE_PNG=1 ^
       -D IEEE_LE=1 ^
-      -D ENABLE_MEMFS=0 ^
+      -D ENABLE_MEMFS=1 ^
       -D ENABLE_EXTRA_TESTS=OFF ^
       %SRC_DIR%
 if errorlevel 1 exit 1
@@ -31,14 +31,3 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
-:: install activate/deactive scripts
-set ACTIVATE_DIR=%PREFIX%\etc\conda\activate.d
-set DEACTIVATE_DIR=%PREFIX%\etc\conda\deactivate.d
-mkdir %ACTIVATE_DIR%
-mkdir %DEACTIVATE_DIR%
-
-copy %RECIPE_DIR%\scripts\activate.bat %ACTIVATE_DIR%\eccodes-activate.bat
-if errorlevel 1 exit 1
-
-copy %RECIPE_DIR%\scripts\deactivate.bat %DEACTIVATE_DIR%\eccodes-deactivate.bat
-if errorlevel 1 exit 1
