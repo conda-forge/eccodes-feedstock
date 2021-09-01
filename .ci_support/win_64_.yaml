@@ -9,7 +9,7 @@ cxx_compiler:
 hdf5:
 - 1.10.6
 libnetcdf:
-- 4.8.0
+- 4.8.1
 libpng:
 - '1.6'
 openjpeg:
