@@ -11,7 +11,7 @@ source:
     - fix-tests-path.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -22,15 +22,13 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
   host:
-    - jasper >=2.0.14  # [not win]
-    - openjpeg   # [win]
+    - jasper >=2.0.14
     - libpng
     - libnetcdf
     - libaec  # [not win]
     - hdf5
   run:
-    - jasper >=2.0.14  # [not win]
-    - openjpeg   # [win]
+    - jasper >=2.0.14
     - libpng
     - libnetcdf
     - libaec  # [not win]
