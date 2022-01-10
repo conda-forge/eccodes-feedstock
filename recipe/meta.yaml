@@ -1,4 +1,4 @@
-{% set version = "2.24.0" %}
+{% set version = "2.24.1" %}
 
 package:
   name: eccodes
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
-  sha256: 307ae2b79f4a7d31789824bca1df1412f60cad68f49bfc49bbc1d4780f3e5b96
+  sha256: e838523d8c895fcc0b7dfa7ee1ac107de70ec7456e80e46a8af013196f429e1e
   patches:
     - fix-tests-path.patch
 
