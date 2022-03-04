@@ -7,6 +7,7 @@ if [[ "$c_compiler" == "gcc" ]]; then
 fi
 
 export BUILD_FORTRAN=1
+export BUILD_JPEG=1
 if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
@@ -18,6 +19,10 @@ if [[ $HOST =~ darwin ]]; then
 elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
+  if [[ $HOST =~ powerpc64le ]]; then
+    # failure in test 'eccodes_t_grib_packing_order' related to jpeg packing
+    export BUILD_JPEG=0
+  fi
 fi
 
 export PYTHON=
@@ -29,7 +34,7 @@ mkdir ../build && cd ../build
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
       -D INSTALL_LIB_DIR='lib' \
-      -D ENABLE_JPG=1 \
+      -D ENABLE_JPG=$BUILD_JPEG \
       -D ENABLE_NETCDF=1 \
       -D ENABLE_PNG=1 \
       -D ENABLE_PYTHON=0 \
