@@ -26,13 +26,13 @@ requirements:
     - jasper >=2.0.14
     - libpng
     - libnetcdf
-    - libaec  # [not win]
+    - libaec
     - hdf5
   run:
     - jasper >=2.0.14
     - libpng
     - libnetcdf
-    - libaec  # [not win]
+    - libaec
     - hdf5
 
 test:
