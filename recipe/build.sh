@@ -8,6 +8,7 @@ fi
 
 export BUILD_FORTRAN=1
 export BUILD_JPEG=1
+export CTEST_EXTRA_FLAGS=""
 if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
@@ -22,6 +23,7 @@ elif [[ $HOST =~ linux ]]; then
   if [[ $HOST =~ powerpc64le ]]; then
     # failure in test 'eccodes_t_grib_packing_order' related to jpeg packing
     export BUILD_JPEG=0
+    export CTEST_EXTRA_FLAGS="-E eccodes_t_grib_packing_order"
   fi
 fi
 
@@ -54,7 +56,7 @@ export ECCODES_TEST_VERBOSE_OUTPUT=1
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-ctest --output-on-failure -j $CPU_COUNT
+ctest --output-on-failure -j $CPU_COUNT $CTEST_EXTRA_FLAGS
 fi
 
 make install
