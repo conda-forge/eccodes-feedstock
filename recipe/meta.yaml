@@ -54,7 +54,7 @@ test:
     - ls $(codes_info -d)  # [not win]
 
 about:
-  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
+  home: https://confluence.ecmwf.int/display/ECC/ecCodes+Home
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
