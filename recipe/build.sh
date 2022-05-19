@@ -35,6 +35,7 @@ mkdir ../build && cd ../build
 
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
+      -D CMAKE_FIND_FRAMEWORK=LAST \
       -D INSTALL_LIB_DIR='lib' \
       -D ENABLE_JPG=$BUILD_JPEG \
       -D ENABLE_NETCDF=1 \
