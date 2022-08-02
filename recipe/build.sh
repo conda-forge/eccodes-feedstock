@@ -15,7 +15,6 @@ if [[ $HOST =~ darwin ]]; then
   export REPLACE_TPL_ABSOLUTE_PATHS=1
   if [[ $HOST =~ arm64 ]]; then
     export MACOS_LE_FLAG="-D IEEE_LE=1"
-    export BUILD_FORTRAN=0
   fi
 elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
