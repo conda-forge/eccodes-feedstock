@@ -11,7 +11,7 @@ source:
     - fix_md5_test.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -25,13 +25,7 @@ requirements:
   host:
     - jasper >=2.0.14  # [not ppc64le]
     - openjpeg  # [ppc64le]
-    - libpng
-    - libnetcdf
-    - libaec
-    - hdf5
-  run:
-    - jasper >=2.0.14  # [not ppc64le]
-    - openjpeg  # [ppc64le]
+    - zlib
     - libpng
     - libnetcdf
     - libaec
