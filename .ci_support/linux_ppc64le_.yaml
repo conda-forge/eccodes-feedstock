@@ -33,9 +33,13 @@ pin_run_as_build:
     max_pin: x.x
   openjpeg:
     max_pin: x.x
+  zlib:
+    max_pin: x.x
 target_platform:
 - linux-ppc64le
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
+zlib:
+- '1.2'
