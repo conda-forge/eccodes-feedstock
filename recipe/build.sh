@@ -23,7 +23,7 @@ elif [[ $HOST =~ linux ]]; then
   if [[ $HOST =~ powerpc64le ]]; then
     # failure in test 'eccodes_t_grib_packing_order' related to jpeg packing
     export BUILD_JPEG=0
-    export CTEST_EXTRA_FLAGS="-E eccodes_t_grib_packing_order"
+    export CTEST_EXTRA_FLAGS="-E 'eccodes_t_grib_packing_order|eccodes_t_grib_ieee'"
   fi
 fi
 
