@@ -21,9 +21,9 @@ elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
   if [[ $HOST =~ powerpc64le ]]; then
-    # failure in test 'eccodes_t_grib_packing_order' related to jpeg packing
+    # failure in test 'eccodes_t_grib_packing_order' and 'eccodes_t_grib_ieee' related to jpeg packing
     export BUILD_JPEG=0
-    export CTEST_EXTRA_FLAGS="-E 'eccodes_t_grib_packing_order|eccodes_t_grib_ieee'"
+    export CTEST_EXTRA_FLAGS="-E \'eccodes_t_grib_packing_order|eccodes_t_grib_ieee\'"
   fi
 fi
 
