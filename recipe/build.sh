@@ -9,6 +9,7 @@ fi
 export BUILD_FORTRAN=1
 export BUILD_JPEG=1
 export CTEST_EXTRA_FLAGS=""
+export EXTRA_TESTS=1
 if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
@@ -21,9 +22,11 @@ elif [[ $HOST =~ linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
   export REPLACE_TPL_ABSOLUTE_PATHS=1
   if [[ $HOST =~ powerpc64le ]]; then
-    # failure in test 'eccodes_t_grib_packing_order' and 'eccodes_t_grib_ieee' related to jpeg packing
+    # failure in test 'eccodes_t_grib_packing_order' related to jpeg packing
+    # failure in eccodes_t_grib_ieee so disable by disabling the extra tests on this platform
     export BUILD_JPEG=0
-    export CTEST_EXTRA_FLAGS="-E eccodes_t_grib_packing_order\|eccodes_t_grib_ieee"
+    export EXTRA_TESTS=0
+    export CTEST_EXTRA_FLAGS="-E eccodes_t_grib_packing_order"
   fi
 fi
 
@@ -44,7 +47,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_FORTRAN=$BUILD_FORTRAN \
       -D ENABLE_ECCODES_THREADS=1 \
       -D ENABLE_AEC=1 \
-      -D ENABLE_EXTRA_TESTS=1 \
+      -D ENABLE_EXTRA_TESTS=$EXTRA_TESTS \
       -D ECBUILD_DOWNLOAD_TIMEOUT=60 \
       -D REPLACE_TPL_ABSOLUTE_PATHS=$REPLACE_TPL_ABSOLUTE_PATHS \
       -D CMAKE_FIND_ROOT_PATH=$PREFIX \
