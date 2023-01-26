@@ -204,4 +204,5 @@ Feedstock Maintainers
 * [@kynan](https://github.com/kynan/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@pelson](https://github.com/pelson/)
+* [@shahramn](https://github.com/shahramn/)
 
