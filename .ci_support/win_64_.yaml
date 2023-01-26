@@ -8,6 +8,8 @@ cxx_compiler:
 - vs2019
 hdf5:
 - 1.12.2
+libaec:
+- '1'
 libnetcdf:
 - 4.8.1
 libpng:
