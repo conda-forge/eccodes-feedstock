@@ -24,7 +24,7 @@ requirements:
     - cmake
     - make
   host:
-    - jasper >=2.0.14,<4.0.0  # [not ppc64le]
+    - jasper >=2.0.14,<3  # [not ppc64le]
     - openjpeg  # [ppc64le]
     - zlib
     - libpng
