@@ -7,8 +7,7 @@ package:
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
   sha256: 2831347b1517af9ebd70dd3cad88ae818a8448d4e6c8671aa728617e73431cd5
-  patches:
-    - jasper-multithread.patch
+  #patches:
   #  - fix_md5_test.patch
 
 build:
