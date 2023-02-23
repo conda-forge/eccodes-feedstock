@@ -11,7 +11,7 @@ source:
   #  - fix_md5_test.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   detect_binary_files_with_prefix: true
 
@@ -23,7 +23,7 @@ requirements:
     - cmake
     - make
   host:
-    - jasper >=2.0.14  # [not ppc64le]
+    - jasper >=2.0.14,<3  # [not ppc64le]
     - openjpeg  # [ppc64le]
     - zlib
     - libpng
