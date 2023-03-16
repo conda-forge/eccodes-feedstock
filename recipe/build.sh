@@ -36,6 +36,9 @@ export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
 mkdir ../build && cd ../build
 
+# One can use the following cmake flag to get more verbose debugging info
+# -D ECBUILD_LOG_LEVEL=DEBUG
+
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_BUILD_TYPE=Release \
       -D CMAKE_FIND_FRAMEWORK=LAST \
@@ -53,7 +56,6 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D CMAKE_FIND_ROOT_PATH=$PREFIX \
       -D CMAKE_FIND_ROOT_PATH_MODE_INCLUDE=BOTH \
       -D CMAKE_PROGRAM_PATH=$BUILD_PREFIX \
-      -D ECBUILD_LOG_LEVEL=DEBUG \
       $MACOS_LE_FLAG \
       $SRC_DIR
 
