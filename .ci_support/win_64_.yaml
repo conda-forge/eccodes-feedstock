@@ -8,6 +8,8 @@ cxx_compiler:
 - vs2019
 hdf5:
 - 1.12.2
+jasper:
+- '4'
 libaec:
 - '1'
 libnetcdf:
@@ -16,7 +18,5 @@ libpng:
 - '1.6'
 target_platform:
 - win-64
-vc:
-- '14'
 zlib:
 - '1.2'
