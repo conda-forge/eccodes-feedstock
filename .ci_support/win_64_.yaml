@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 hdf5:
-- 1.12.2
+- 1.14.0
 jasper:
 - '4'
 libaec:
