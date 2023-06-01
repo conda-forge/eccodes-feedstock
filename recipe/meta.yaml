@@ -1,4 +1,4 @@
-{% set version = "2.30.0" %}
+{% set version = "2.30.2" %}
 
 package:
   name: eccodes
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz
-  sha256: b3dc9389d05841a2e9c957aa520988a54c2605163de64b7e73c084aaed1fc3c4
+  sha256: 39b95e4221b116dc818656d04c82884055d48aebaa2990c259ea8cdffda42582
   #patches:
   #  - fix_md5_test.patch
 
