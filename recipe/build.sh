@@ -13,6 +13,9 @@ export EXTRA_TESTS=1
 if [[ $HOST =~ darwin ]]; then
   export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
   export FFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FFLAGS"
+  # https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+  # (to fix grib_accessor_class_step_in_units.cc:226:42: error: 'value' is unavailable: introduced in macOS 10.13)
+  export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
   export REPLACE_TPL_ABSOLUTE_PATHS=1
   if [[ $HOST =~ arm64 ]]; then
     export MACOS_LE_FLAG="-D IEEE_LE=1"
