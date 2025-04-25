@@ -21,6 +21,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
+    - diffutils  # [not win]
     - make
   host:
     - jasper    # [not ppc64le]
@@ -33,7 +34,6 @@ requirements:
 
 test:
   requires:
-    - coreutils  # [not win]
     - perl  # [not win]
     - m2-bash  # [win]
     - m2-findutils  # [win]
