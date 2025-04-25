@@ -33,6 +33,7 @@ requirements:
 
 test:
   requires:
+    - diffutils  # [not win]
     - perl  # [not win]
     - m2-bash  # [win]
     - m2-findutils  # [win]
