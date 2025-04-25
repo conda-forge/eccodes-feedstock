@@ -11,7 +11,7 @@ source:
   #  - fix_md5_test.patch
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
+    - diffutils  # [not win]
     - make
   host:
     - jasper    # [not ppc64le]
