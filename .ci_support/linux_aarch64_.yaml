@@ -30,8 +30,6 @@ libnetcdf:
 - 4.9.3
 libpng:
 - '1.6'
-perl:
-- 5.32.1
 target_platform:
 - linux-aarch64
 zip_keys:
