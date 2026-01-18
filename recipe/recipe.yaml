@@ -1,0 +1,87 @@
+schema_version: 1
+
+context:
+  version: 2.44.0
+
+package:
+  name: eccodes
+  version: ${{ version }}
+
+source:
+  #patches:
+  #  - fix_md5_test.patch
+  url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-${{ version }}-Source.tar.gz
+  sha256: c75fb1f91b765b6b8b4774632a8a6fbcec96934db015fb63c2ad2560aedd443b
+
+build:
+  number: 1
+  prefix_detection:
+    ignore_binary_files: true
+
+requirements:
+  build:
+    - if: not win
+      then: ${{ compiler('fortran') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - if: not win
+      then: diffutils
+    - make
+  host:
+    - if: not ppc64le
+      then: jasper
+    - if: ppc64le
+      then: openjpeg
+    - zlib
+    - libpng
+    - libnetcdf
+    - libaec
+    - hdf5
+
+tests:
+  - requirements:
+      run:
+        - if: not win
+          then: perl
+        - if: win
+          then: m2-bash
+        - if: win
+          then: m2-findutils
+        - if: win
+          then: m2-coreutils
+        - if: win
+          then: m2-grep
+        - if: win
+          then: m2-sed
+        - if: win
+          then: m2-gawk
+        - if: win
+          then: m2-diffutils
+        - if: win
+          then: m2-perl
+    script:
+      - codes_info
+      - if: not win
+        then: ls $(codes_info -s)
+      - if: not win
+        then: ls $(codes_info -d)
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: ECMWF ecCodes Copyright 2005- ECMWF.
+  homepage: https://confluence.ecmwf.int/display/ECC/ecCodes+Home
+
+extra:
+  recipe-maintainers:
+    - joobog
+    - shahramn
+    - kmuehlbauer
+    - kynan
+    - ocefpaf
+    - pelson
+    - StephanSiemen
+    - dtip
+    - iainrussell
