@@ -8,8 +8,6 @@ package:
   version: ${{ version }}
 
 source:
-  #patches:
-  #  - fix_md5_test.patch
   url: https://confluence.ecmwf.int/download/attachments/45757960/eccodes-${{ version }}-Source.tar.gz
   sha256: c75fb1f91b765b6b8b4774632a8a6fbcec96934db015fb63c2ad2560aedd443b
 
@@ -21,13 +19,13 @@ build:
 requirements:
   build:
     - if: not win
-      then: ${{ compiler('fortran') }}
+      then: 
+        - ${{ compiler('fortran') }}
+        - diffutils
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
     - cmake
-    - if: not win
-      then: diffutils
     - make
   host:
     - if: not ppc64le
@@ -44,29 +42,24 @@ tests:
   - requirements:
       run:
         - if: not win
-          then: perl
+          then: 
+            - perl
         - if: win
-          then: m2-bash
-        - if: win
-          then: m2-findutils
-        - if: win
-          then: m2-coreutils
-        - if: win
-          then: m2-grep
-        - if: win
-          then: m2-sed
-        - if: win
-          then: m2-gawk
-        - if: win
-          then: m2-diffutils
-        - if: win
-          then: m2-perl
+          then: 
+            - m2-bash
+            - m2-findutils
+            - m2-coreutils
+            - m2-grep
+            - m2-sed
+            - m2-gawk
+            - m2-diffutils
+            - m2-perl
     script:
       - codes_info
       - if: not win
-        then: ls $(codes_info -s)
-      - if: not win
-        then: ls $(codes_info -d)
+        then: 
+          - ls $(codes_info -s)
+          - ls $(codes_info -d)
 
 about:
   license: Apache-2.0
@@ -85,3 +78,4 @@ extra:
     - StephanSiemen
     - dtip
     - iainrussell
+    - xylar
