@@ -207,6 +207,3 @@ Feedstock Maintainers
 * [@pelson](https://github.com/pelson/)
 * [@shahramn](https://github.com/shahramn/)
 
-
-<!-- dummy commit to enable rerendering -->
-
