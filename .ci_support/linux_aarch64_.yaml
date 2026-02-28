@@ -27,7 +27,7 @@ jasper:
 libaec:
 - '1'
 libnetcdf:
-- 4.9.3
+- 4.10.0
 libpng:
 - '1.6'
 perl:
