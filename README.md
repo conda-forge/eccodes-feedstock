@@ -48,17 +48,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_hdf51.14.6</td>
+              <td>osx_arm64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5282&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eccodes-feedstock?branchName=main&jobName=win&configuration=win%20win_64_hdf51.14.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eccodes-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_hdf52</td>
+              <td>osx_arm64_hdf52</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5282&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eccodes-feedstock?branchName=main&jobName=win&configuration=win%20win_64_hdf52" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eccodes-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_hdf52" alt="variant">
                 </a>
               </td>
             </tr>
@@ -86,31 +86,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `eccodes` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install eccodes
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install eccodes
 ```
 
-It is possible to list all of the versions of `eccodes` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add eccodes
+# for installing globally
+pixi global install eccodes
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `eccodes` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search eccodes --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search eccodes --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search eccodes --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -122,6 +164,8 @@ mamba repoquery whoneeds eccodes --channel conda-forge
 # List dependencies of `eccodes`:
 mamba repoquery depends eccodes --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
